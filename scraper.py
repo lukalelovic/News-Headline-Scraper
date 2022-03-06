@@ -7,9 +7,9 @@ news = News()
 print()
 print('--TOP NEWS WORDS OF THE DAY--')
 print()
-for word in news.words:
-    if news.frequency[news.words.index(word)] > 10:
-        data = 'X' * news.frequency[news.words.index(word)]
+for word, freq in sorted(news.words.items(), key=lambda item: item[1]):
+    if freq > 10:
+        data = 'X' * freq
         print(word + ': ' + data)
         print()
 
